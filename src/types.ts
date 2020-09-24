@@ -5,13 +5,13 @@ export type PostLeadRequest = Partial<Lead>;
 export interface GetCreditCardOffersRequest
   extends Pick<
     Lead,
-    | "personalInformation"
-    | "creditCardInformation"
-    | "creditInformation"
-    | "legalInformation"
-    | "clientTags"
+    | 'personalInformation'
+    | 'creditCardInformation'
+    | 'creditInformation'
+    | 'legalInformation'
+    | 'clientTags'
   > {
-  productTypes: ["credit_card"];
+  productTypes: Array<'credit_card'>;
 }
 
 // Responses
@@ -67,34 +67,34 @@ export interface LeadAction {
   deletedAt: string;
 }
 export type RejectReason =
-  | "low_fico"
-  | "no_fico"
-  | "major_derogatory"
-  | "underwriting_decline"
-  | "debt_to_income_ratio"
-  | "not_in_active_state"
-  | "incorrect_data_provided"
-  | "duplicate"
-  | "unknown";
+  | 'low_fico'
+  | 'no_fico'
+  | 'major_derogatory'
+  | 'underwriting_decline'
+  | 'debt_to_income_ratio'
+  | 'not_in_active_state'
+  | 'incorrect_data_provided'
+  | 'duplicate'
+  | 'unknown';
 export type LeadActionType = LeadStatus;
 export type LeadStatus =
-  | "initialized"
-  | "api_rejected"
-  | "api_approved"
-  | "api_listing"
-  | "clicked_referral_link"
-  | "clicked_special_offer_link"
-  | "special_offer_conversion"
-  | "applied"
-  | "rejected"
-  | "approved"
-  | "listed"
-  | "funded"
-  | "not_funded"
-  | "clicked_credit_card_offer_link"
-  | "clicked_mortgage_offer_link"
-  | "clicked_savings_offer_link"
-  | "unknown";
+  | 'initialized'
+  | 'api_rejected'
+  | 'api_approved'
+  | 'api_listing'
+  | 'clicked_referral_link'
+  | 'clicked_special_offer_link'
+  | 'special_offer_conversion'
+  | 'applied'
+  | 'rejected'
+  | 'approved'
+  | 'listed'
+  | 'funded'
+  | 'not_funded'
+  | 'clicked_credit_card_offer_link'
+  | 'clicked_mortgage_offer_link'
+  | 'clicked_savings_offer_link'
+  | 'unknown';
 
 export interface LeadSessionInformation {
   ipAddress: string;
@@ -160,14 +160,14 @@ export interface SavingsOfferPreviewQueryParameters {
 }
 
 export type CompoundingMethod =
-  | "annually"
-  | "continuous"
-  | "daily"
-  | "monthly"
-  | "quarterly"
-  | "semiAnnually"
-  | "simple"
-  | "weekly";
+  | 'annually'
+  | 'continuous'
+  | 'daily'
+  | 'monthly'
+  | 'quarterly'
+  | 'semiAnnually'
+  | 'simple'
+  | 'weekly';
 
 export interface SpecialOffer {
   uuid: string;
@@ -191,12 +191,12 @@ export interface MortgageOfferDetails {
 }
 
 export type MortgageLoanType =
-  | "fifteen_year_fixed"
-  | "thirty_year_fixed"
-  | "five_one_adjustable"
-  | "seven_one_adjustable"
-  | "ten_one_adjustable";
-export type MortgageAdjustmentType = "credits" | "par" | "points";
+  | 'fifteen_year_fixed'
+  | 'thirty_year_fixed'
+  | 'five_one_adjustable'
+  | 'seven_one_adjustable'
+  | 'ten_one_adjustable';
+export type MortgageAdjustmentType = 'credits' | 'par' | 'points';
 
 export interface Lead {
   uuid: string;
@@ -220,7 +220,7 @@ export interface Lead {
 }
 
 export interface LeadHealthInformation {
-  gender: "male" | "female" | "unknown";
+  gender: 'male' | 'female' | 'unknown';
   heightInInches: number;
   weightInPounds: number;
   tobaccoSmoker: boolean;
@@ -266,43 +266,43 @@ export interface LeadEducationInformation {
 }
 
 export type EducationLevel =
-  | "high_school"
-  | "associate"
-  | "bachelors"
-  | "masters"
-  | "doctorate"
-  | "other_grad_degree"
-  | "other"
-  | "unknown";
+  | 'high_school'
+  | 'associate'
+  | 'bachelors'
+  | 'masters'
+  | 'doctorate'
+  | 'other_grad_degree'
+  | 'other'
+  | 'unknown';
 export type GraduateDegreeType =
-  | "doctor_of_medicine"
-  | "doctor_of_osteopathic_medicine"
-  | "doctor_of_optometry"
-  | "doctor_of_dental_medicine"
-  | "dentariae_medicinae_doctoris"
-  | "doctor_of_dental_surgery"
-  | "doctor_of_veterinary_medicine"
-  | "doctor_of_pharmacy"
-  | "veterinariae_medicinae_doctoris"
-  | "master_of_arts"
-  | "master_of_science"
-  | "master_of_research"
-  | "master_of_research_project"
-  | "master_of_studies"
-  | "master_of_business_administration"
-  | "master_of_library_science"
-  | "master_of_public_administration"
-  | "master_of_public_health"
-  | "master_of_laws"
-  | "master_of_arts_liberal_studies"
-  | "master_of_fine_arts"
-  | "master_of_music"
-  | "master_of_education"
-  | "master_of_engineering"
-  | "master_of_architecture"
-  | "juris_doctor"
-  | "other"
-  | "unknown";
+  | 'doctor_of_medicine'
+  | 'doctor_of_osteopathic_medicine'
+  | 'doctor_of_optometry'
+  | 'doctor_of_dental_medicine'
+  | 'dentariae_medicinae_doctoris'
+  | 'doctor_of_dental_surgery'
+  | 'doctor_of_veterinary_medicine'
+  | 'doctor_of_pharmacy'
+  | 'veterinariae_medicinae_doctoris'
+  | 'master_of_arts'
+  | 'master_of_science'
+  | 'master_of_research'
+  | 'master_of_research_project'
+  | 'master_of_studies'
+  | 'master_of_business_administration'
+  | 'master_of_library_science'
+  | 'master_of_public_administration'
+  | 'master_of_public_health'
+  | 'master_of_laws'
+  | 'master_of_arts_liberal_studies'
+  | 'master_of_fine_arts'
+  | 'master_of_music'
+  | 'master_of_education'
+  | 'master_of_engineering'
+  | 'master_of_architecture'
+  | 'juris_doctor'
+  | 'other'
+  | 'unknown';
 export interface LeadLegalInformation {
   consentsToFcra: boolean; // Whether the lead was shown, and consented to a Fair Credit Reporting Act notice
   consentsToTcpa: boolean; // Whether the lead was shown, and consented to a Telephone Consumer Protection Act notice
@@ -338,27 +338,27 @@ export interface LeadEmploymentInformation {
 }
 
 export type PropertyType =
-  | "rent"
-  | "condo"
-  | "multi_unit"
-  | "single_family"
-  | "townhouse"
-  | "unknown";
+  | 'rent'
+  | 'condo'
+  | 'multi_unit'
+  | 'single_family'
+  | 'townhouse'
+  | 'unknown';
 export type PropertyStatus =
-  | "own_outright"
-  | "own_with_mortgage"
-  | "rent"
-  | "unknown";
-export type MortgageType = "purchase" | "refinance" | "unknown";
-export type OccupancyType = "primary" | "secondary" | "investment" | "unknown";
-export type RefinanceType = "cash_out" | "rate_term" | "unknown";
-export type PropertySearchStatus = "found" | "not_found" | "unknown";
+  | 'own_outright'
+  | 'own_with_mortgage'
+  | 'rent'
+  | 'unknown';
+export type MortgageType = 'purchase' | 'refinance' | 'unknown';
+export type OccupancyType = 'primary' | 'secondary' | 'investment' | 'unknown';
+export type RefinanceType = 'cash_out' | 'rate_term' | 'unknown';
+export type PropertySearchStatus = 'found' | 'not_found' | 'unknown';
 export type PurchaseStatus =
-  | "no_offer"
-  | "offer_accepted"
-  | "offer_pending"
-  | "under_contract"
-  | "unknown";
+  | 'no_offer'
+  | 'offer_accepted'
+  | 'offer_pending'
+  | 'under_contract'
+  | 'unknown';
 
 export interface LeadMortgageInformation {
   propertyType?: PropertyType;
@@ -399,165 +399,165 @@ export interface LeadSavingsInformation {
 export interface LeadCreditCardInformation {
   allowAnnualFee?: boolean;
   cardPurposes?:
-    | "balance_transfer"
-    | "cash_back"
-    | "earning_rewards"
-    | "improve_credit"
-    | "low_interest"
-    | "new_to_credit"
-    | "student"
-    | "travel_incentives"
-    | "unknown";
+    | 'balance_transfer'
+    | 'cash_back'
+    | 'earning_rewards'
+    | 'improve_credit'
+    | 'low_interest'
+    | 'new_to_credit'
+    | 'student'
+    | 'travel_incentives'
+    | 'unknown';
 }
 
-export type BankAccountType = "checking" | "savings" | "other" | "unknown";
+export type BankAccountType = 'checking' | 'savings' | 'other' | 'unknown';
 export type EmploymentPayFrequency =
-  | "weekly"
-  | "biweekly"
-  | "twice_monthly"
-  | "monthly"
-  | "unknown";
+  | 'weekly'
+  | 'biweekly'
+  | 'twice_monthly'
+  | 'monthly'
+  | 'unknown';
 export type EmploymentStatus =
-  | "employed_full_time"
-  | "employed_part_time"
-  | "military"
-  | "not_employed"
-  | "self_employed"
-  | "retired"
-  | "other"
-  | "unknown";
+  | 'employed_full_time'
+  | 'employed_part_time'
+  | 'military'
+  | 'not_employed'
+  | 'self_employed'
+  | 'retired'
+  | 'other'
+  | 'unknown';
 export type ProvidedCreditRating =
-  | "excellent"
-  | "good"
-  | "fair"
-  | "poor"
-  | "limited"
-  | "unknown";
-export type KnownCreditRatings = "excellent" | "good" | "fair" | "poor"; // types with a known range
+  | 'excellent'
+  | 'good'
+  | 'fair'
+  | 'poor'
+  | 'limited'
+  | 'unknown';
+export type KnownCreditRatings = 'excellent' | 'good' | 'fair' | 'poor'; // types with a known range
 
 export type CitizenshipStatus =
-  | "citizen"
-  | "permanent_resident"
-  | "other"
-  | "unknown";
+  | 'citizen'
+  | 'permanent_resident'
+  | 'other'
+  | 'unknown';
 export type LeadState =
-  | "AK"
-  | "AL"
-  | "AR"
-  | "AZ"
-  | "CA"
-  | "CO"
-  | "CT"
-  | "DC"
-  | "DE"
-  | "FL"
-  | "GA"
-  | "HI"
-  | "IA"
-  | "ID"
-  | "IL"
-  | "IN"
-  | "KS"
-  | "KY"
-  | "LA"
-  | "MA"
-  | "MD"
-  | "ME"
-  | "MI"
-  | "MN"
-  | "MO"
-  | "MS"
-  | "MT"
-  | "NC"
-  | "ND"
-  | "NE"
-  | "NH"
-  | "NJ"
-  | "NM"
-  | "NV"
-  | "NY"
-  | "OH"
-  | "OK"
-  | "OR"
-  | "PA"
-  | "PR"
-  | "RI"
-  | "SC"
-  | "SD"
-  | "TN"
-  | "TX"
-  | "UT"
-  | "VA"
-  | "VI"
-  | "VT"
-  | "WA"
-  | "WI"
-  | "WV"
-  | "WY"
-  | "Puerto Rico"
-  | "District of Columbia";
+  | 'AK'
+  | 'AL'
+  | 'AR'
+  | 'AZ'
+  | 'CA'
+  | 'CO'
+  | 'CT'
+  | 'DC'
+  | 'DE'
+  | 'FL'
+  | 'GA'
+  | 'HI'
+  | 'IA'
+  | 'ID'
+  | 'IL'
+  | 'IN'
+  | 'KS'
+  | 'KY'
+  | 'LA'
+  | 'MA'
+  | 'MD'
+  | 'ME'
+  | 'MI'
+  | 'MN'
+  | 'MO'
+  | 'MS'
+  | 'MT'
+  | 'NC'
+  | 'ND'
+  | 'NE'
+  | 'NH'
+  | 'NJ'
+  | 'NM'
+  | 'NV'
+  | 'NY'
+  | 'OH'
+  | 'OK'
+  | 'OR'
+  | 'PA'
+  | 'PR'
+  | 'RI'
+  | 'SC'
+  | 'SD'
+  | 'TN'
+  | 'TX'
+  | 'UT'
+  | 'VA'
+  | 'VI'
+  | 'VT'
+  | 'WA'
+  | 'WI'
+  | 'WV'
+  | 'WY'
+  | 'Puerto Rico'
+  | 'District of Columbia';
 export type LeadBestTimeToCall =
-  | "morning"
-  | "afternoon"
-  | "evening"
-  | "night"
-  | "unknown";
+  | 'morning'
+  | 'afternoon'
+  | 'evening'
+  | 'night'
+  | 'unknown';
 export type LoanPurpose =
-  | "auto_purchase"
-  | "auto_refinance"
-  | "baby"
-  | "boat"
-  | "business"
-  | "car_repair"
-  | "cosmetic"
-  | "credit_card_refi"
-  | "debt_consolidation"
-  | "emergency"
-  | "engagement"
-  | "green"
-  | "home_improvement"
-  | "home_purchase"
-  | "home_refi"
-  | "household_expenses"
-  | "large_purchases"
-  | "life_event"
-  | "medical_dental"
-  | "motorcycle"
-  | "moving_relocation"
-  | "rv"
-  | "special_occasion"
-  | "student_loan"
-  | "student_loan_refi"
-  | "taxes"
-  | "vacation"
-  | "wedding"
-  | "other"
-  | "unknown";
+  | 'auto_purchase'
+  | 'auto_refinance'
+  | 'baby'
+  | 'boat'
+  | 'business'
+  | 'car_repair'
+  | 'cosmetic'
+  | 'credit_card_refi'
+  | 'debt_consolidation'
+  | 'emergency'
+  | 'engagement'
+  | 'green'
+  | 'home_improvement'
+  | 'home_purchase'
+  | 'home_refi'
+  | 'household_expenses'
+  | 'large_purchases'
+  | 'life_event'
+  | 'medical_dental'
+  | 'motorcycle'
+  | 'moving_relocation'
+  | 'rv'
+  | 'special_occasion'
+  | 'student_loan'
+  | 'student_loan_refi'
+  | 'taxes'
+  | 'vacation'
+  | 'wedding'
+  | 'other'
+  | 'unknown';
 export type ProductTypes =
-  | "credit_card"
-  | "insurance"
-  | "life_insurance"
-  | "loan"
-  | "mortgage"
-  | "savings"
-  | "other"
-  | "unknown";
+  | 'credit_card'
+  | 'insurance'
+  | 'life_insurance'
+  | 'loan'
+  | 'mortgage'
+  | 'savings'
+  | 'other'
+  | 'unknown';
 export type ProductSubTypes =
-  | "credit_card"
-  | "secured_card"
-  | "personal_loan"
-  | "student_loan_refinance"
-  | "co_applicant_loan"
-  | "purchase"
-  | "refinance"
-  | "savings_account"
-  | "money_market_account"
-  | "certificate_of_deposit"
-  | "individual_retirement_account"
-  | "cash_management_account"
-  | "high_interest_checking"
-  | "accidental_death_benefits"
-  | "term_life";
+  | 'credit_card'
+  | 'secured_card'
+  | 'personal_loan'
+  | 'student_loan_refinance'
+  | 'co_applicant_loan'
+  | 'purchase'
+  | 'refinance'
+  | 'savings_account'
+  | 'money_market_account'
+  | 'certificate_of_deposit'
+  | 'individual_retirement_account'
+  | 'cash_management_account'
+  | 'high_interest_checking'
+  | 'accidental_death_benefits'
+  | 'term_life';
 export type UUID = string;
 
 export interface Originator {
@@ -581,7 +581,7 @@ export interface LoanOffersPreviewQueryParameters {
   zipCode?: string;
 }
 
-export type TermUnit = "day" | "month" | "year;";
+export type TermUnit = 'day' | 'month' | 'year;';
 export interface LoanOffer {
   uuid: string;
   originator: Originator;
@@ -622,7 +622,7 @@ export interface LoanOffer {
   aprType: AprType;
 }
 
-export type AprType = "variable" | "regular" | "fixed";
+export type AprType = 'variable' | 'regular' | 'fixed';
 
 export interface CreditCardOffersPreviewQueryParameters {
   providedCreditRating: ProvidedCreditRating;
@@ -650,7 +650,7 @@ export interface EarningItemMerchant {
   category: EarningItemCategory;
 }
 
-export type EarningItemType = "category" | "merchant" | "ebp" | "paymentMethod";
+export type EarningItemType = 'category' | 'merchant' | 'ebp' | 'paymentMethod';
 export interface EarningItem {
   type: EarningItemType;
   earnRate: number;
@@ -667,11 +667,11 @@ export interface EarningGroup {
 }
 
 export type TransactionLevelEarningSchemeType =
-  | "basic"
-  | "calculation"
-  | "introductory"
-  | "rotating"
-  | "capped";
+  | 'basic'
+  | 'calculation'
+  | 'introductory'
+  | 'rotating'
+  | 'capped';
 export interface TransactionLevelEarningScheme {
   type: TransactionLevelEarningSchemeType;
   groups: EarningGroup[];
@@ -694,11 +694,11 @@ export interface CardLevelEarningScheme {
   personalization: BonusPersonalization;
 }
 export type CardLevelEarningSchemeName =
-  | "Sign-Up Bonus"
-  | "Anniversary Bonus"
-  | "Annual Bonus"
-  | "Usage Bonus";
-export type CardLevelEarningSchemeType = "One Time" | "Recurring";
+  | 'Sign-Up Bonus'
+  | 'Anniversary Bonus'
+  | 'Annual Bonus'
+  | 'Usage Bonus';
+export type CardLevelEarningSchemeType = 'One Time' | 'Recurring';
 export interface EarningProgram {
   transactionLevelEarningScheme: TransactionLevelEarningScheme[];
   cardLevelEarningScheme: CardLevelEarningScheme[];
@@ -758,158 +758,158 @@ export interface CreditCardOfferDetails {
 }
 
 export type CardBenefits =
-  | "No Foreign Transaction Fees"
-  | "Purchase Protection"
-  | "Return Protection"
-  | "Price Protection"
-  | "Fraud Protection"
-  | "Extended Warranty"
-  | "Travel Accident Insurance"
-  | "Trip Interruption Insurance"
-  | "Car Rental Insurance"
-  | "Baggage Insurance"
-  | "Baggage Delay Insurance"
-  | "Hotel Burglary Insurance"
-  | "Travel & Emergency Assistance"
-  | "Roadside Assistance"
-  | "Concierge Service"
-  | "Lounge Access"
-  | "Identity Theft Assistance"
-  | "In-Flight Savings"
-  | "Free Checked Bag"
-  | "Priority Boarding"
-  | "No Blackout Dates"
-  | "Free Companion Ticket"
-  | "Discount Companion Ticket"
-  | "Global Entry or TSA PreCheck"
-  | "Private Jet Perks"
-  | "Lounge Access Discount"
-  | "24/7 Cardholder Support"
-  | "Authorized User"
-  | "Entertainment Access"
-  | "Airline Fee Credit"
-  | "Late Fee Pass"
-  | "Credit Score Reporting"
-  | "No Flight Change Fees"
-  | "24/7 Account Monitoring"
-  | "Amex Offers"
-  | "Visa Signature Offers"
-  | "MasterCard Offers"
-  | "Free Hotel Stay"
-  | "Extended Hotel Stay"
-  | "Dining Concierge"
-  | "2 Lounge Passes"
-  | "Hilton Honors Silver Membership"
-  | "Hilton Honors Gold Membership"
-  | "World of Hyatt Discoverist Status"
-  | "SPG Gold Membership"
-  | "Marriott Rewards Silver Status"
-  | "Hertz Presidents Circle Elite Status"
-  | "2 Free Checked Bags"
-  | "Auto Discounts"
-  | "InCircle Partnership"
-  | "ShopRunner"
-  | "WiFi Access"
-  | "ShopSafe"
-  | "BoA Preferred Rewards"
-  | "MasterCard Fuel Rewards Network"
-  | "Missed Event Ticket Protection"
-  | "Account Freezing"
-  | "Cell Phone Protection"
-  | "GPA Rewards"
-  | "In-Flight WiFi Credit"
-  | "Citi Private Pass"
-  | "Priceless Cities"
-  | "The Hotel Collection"
-  | "By Invitation Only"
-  | "Luxury Hotel Collection"
-  | "Expedia+ Silver Status"
-  | "Expedia+ Gold Status"
-  | "$100 American Airlines Discount"
-  | "Disney Parks Perks and Savings"
-  | "Ritz-Carlton Gold Elite Status"
-  | "Ritz-Carlton Club Level Upgrade"
-  | "Annual Travel Credit"
-  | "IHG Platinum Elite Status"
-  | "QuickBooks Connect"
-  | "ReceiptMatch"
-  | "Employee Spending Limits"
-  | "FX International Payments"
-  | "No Pre-Set Spending Limit"
-  | "Purchase Financing"
-  | "Amex Open Savings"
-  | "Amazon Special Financing"
-  | "$100 Ritz-Carlton Hotel Credit"
-  | "British Airways Companion Ticket"
-  | "Mercedes-Benz Gift Certificates"
-  | "Mercedes-Benz Excess Mileage Waiver"
-  | "JetBlue Annual Statement Credit"
-  | "20% Discount on Delta Flights for Delta Private Jet Members"
-  | "Expense Report Features"
-  | "Business Cell Phone Protection"
-  | "Free Shipping on most Target.com orders"
-  | "30 Extra Days for Returns"
-  | "Free clothing altertaions"
-  | "Personal shopping"
-  | "Shopmyway Savings"
-  | "Online Subscription Credit"
-  | "Uber Exclusive Access"
-  | "Airline Benefits"
-  | "Hotel Benefits"
-  | "Other Travel Benefits"
-  | "Emergency Assistance"
-  | "Experiences"
-  | "Shopping Benefits"
-  | "Cardholder Benefits"
-  | "Enhanced Security"
-  | "Business Benefits"
-  | "Other Benefits"
-  | "In-Flight Discounts"
-  | "Fee Coverage"
-  | "Flight Credits & Discounts"
-  | "Hotel Membership Status"
-  | "Hotel Credit & Free Stays"
-  | "Travel Credit"
-  | "Travel Experiences Programs"
-  | "Car Rental Membership Status"
-  | "Extra Gas Rewards"
-  | "Shopping Protection"
-  | "Shopping Discounts"
-  | "Free Shipping"
-  | "The Boingo American Express Preferred Plan"
-  | "AirSpace Lounge"
-  | "Uber Monthly Credit"
-  | "Ride Share Benefits"
-  | "Delta Sky Club"
-  | "Admirals Club Membership"
-  | "Priority Pass Select Membership (Prestige)"
-  | "Priority Pass Select Membership (Standard Plus)"
-  | "Daily Breakfast"
-  | "Early Check-in & Late Check-out"
-  | "Room Upgrades"
-  | "Complementary WiFi"
-  | "Amex Hotel Collection Credit"
-  | "Temporary Account Numbers"
-  | "One-Time 50% Discount on Companion Ticket"
-  | "Airline Travel Credit"
-  | "United Club Membership"
-  | "Chip Technology"
-  | "Earn More Miles for Sharing Travel Stories"
-  | "Mastercard World Elite Concierge and Luxury Travel Benefits"
-  | "20% Savings on Delta In-Flight Purchases"
-  | "25% Savings on United In-Flight Food and Drink Purchases"
-  | "$100 Hilton Properties Credit"
-  | "$250 Hilton Resort Credit"
-  | "Hilton Honors Diamond Membership"
-  | "Free Birthday Gift"
-  | "2x Points During Your Birthday Month"
-  | "Car Rental VIP Perks"
-  | "Free shipping with the purchase of a bra"
-  | "Monthly Dining Credit"
-  | "Amazon Prime Student";
+  | 'No Foreign Transaction Fees'
+  | 'Purchase Protection'
+  | 'Return Protection'
+  | 'Price Protection'
+  | 'Fraud Protection'
+  | 'Extended Warranty'
+  | 'Travel Accident Insurance'
+  | 'Trip Interruption Insurance'
+  | 'Car Rental Insurance'
+  | 'Baggage Insurance'
+  | 'Baggage Delay Insurance'
+  | 'Hotel Burglary Insurance'
+  | 'Travel & Emergency Assistance'
+  | 'Roadside Assistance'
+  | 'Concierge Service'
+  | 'Lounge Access'
+  | 'Identity Theft Assistance'
+  | 'In-Flight Savings'
+  | 'Free Checked Bag'
+  | 'Priority Boarding'
+  | 'No Blackout Dates'
+  | 'Free Companion Ticket'
+  | 'Discount Companion Ticket'
+  | 'Global Entry or TSA PreCheck'
+  | 'Private Jet Perks'
+  | 'Lounge Access Discount'
+  | '24/7 Cardholder Support'
+  | 'Authorized User'
+  | 'Entertainment Access'
+  | 'Airline Fee Credit'
+  | 'Late Fee Pass'
+  | 'Credit Score Reporting'
+  | 'No Flight Change Fees'
+  | '24/7 Account Monitoring'
+  | 'Amex Offers'
+  | 'Visa Signature Offers'
+  | 'MasterCard Offers'
+  | 'Free Hotel Stay'
+  | 'Extended Hotel Stay'
+  | 'Dining Concierge'
+  | '2 Lounge Passes'
+  | 'Hilton Honors Silver Membership'
+  | 'Hilton Honors Gold Membership'
+  | 'World of Hyatt Discoverist Status'
+  | 'SPG Gold Membership'
+  | 'Marriott Rewards Silver Status'
+  | 'Hertz Presidents Circle Elite Status'
+  | '2 Free Checked Bags'
+  | 'Auto Discounts'
+  | 'InCircle Partnership'
+  | 'ShopRunner'
+  | 'WiFi Access'
+  | 'ShopSafe'
+  | 'BoA Preferred Rewards'
+  | 'MasterCard Fuel Rewards Network'
+  | 'Missed Event Ticket Protection'
+  | 'Account Freezing'
+  | 'Cell Phone Protection'
+  | 'GPA Rewards'
+  | 'In-Flight WiFi Credit'
+  | 'Citi Private Pass'
+  | 'Priceless Cities'
+  | 'The Hotel Collection'
+  | 'By Invitation Only'
+  | 'Luxury Hotel Collection'
+  | 'Expedia+ Silver Status'
+  | 'Expedia+ Gold Status'
+  | '$100 American Airlines Discount'
+  | 'Disney Parks Perks and Savings'
+  | 'Ritz-Carlton Gold Elite Status'
+  | 'Ritz-Carlton Club Level Upgrade'
+  | 'Annual Travel Credit'
+  | 'IHG Platinum Elite Status'
+  | 'QuickBooks Connect'
+  | 'ReceiptMatch'
+  | 'Employee Spending Limits'
+  | 'FX International Payments'
+  | 'No Pre-Set Spending Limit'
+  | 'Purchase Financing'
+  | 'Amex Open Savings'
+  | 'Amazon Special Financing'
+  | '$100 Ritz-Carlton Hotel Credit'
+  | 'British Airways Companion Ticket'
+  | 'Mercedes-Benz Gift Certificates'
+  | 'Mercedes-Benz Excess Mileage Waiver'
+  | 'JetBlue Annual Statement Credit'
+  | '20% Discount on Delta Flights for Delta Private Jet Members'
+  | 'Expense Report Features'
+  | 'Business Cell Phone Protection'
+  | 'Free Shipping on most Target.com orders'
+  | '30 Extra Days for Returns'
+  | 'Free clothing altertaions'
+  | 'Personal shopping'
+  | 'Shopmyway Savings'
+  | 'Online Subscription Credit'
+  | 'Uber Exclusive Access'
+  | 'Airline Benefits'
+  | 'Hotel Benefits'
+  | 'Other Travel Benefits'
+  | 'Emergency Assistance'
+  | 'Experiences'
+  | 'Shopping Benefits'
+  | 'Cardholder Benefits'
+  | 'Enhanced Security'
+  | 'Business Benefits'
+  | 'Other Benefits'
+  | 'In-Flight Discounts'
+  | 'Fee Coverage'
+  | 'Flight Credits & Discounts'
+  | 'Hotel Membership Status'
+  | 'Hotel Credit & Free Stays'
+  | 'Travel Credit'
+  | 'Travel Experiences Programs'
+  | 'Car Rental Membership Status'
+  | 'Extra Gas Rewards'
+  | 'Shopping Protection'
+  | 'Shopping Discounts'
+  | 'Free Shipping'
+  | 'The Boingo American Express Preferred Plan'
+  | 'AirSpace Lounge'
+  | 'Uber Monthly Credit'
+  | 'Ride Share Benefits'
+  | 'Delta Sky Club'
+  | 'Admirals Club Membership'
+  | 'Priority Pass Select Membership (Prestige)'
+  | 'Priority Pass Select Membership (Standard Plus)'
+  | 'Daily Breakfast'
+  | 'Early Check-in & Late Check-out'
+  | 'Room Upgrades'
+  | 'Complementary WiFi'
+  | 'Amex Hotel Collection Credit'
+  | 'Temporary Account Numbers'
+  | 'One-Time 50% Discount on Companion Ticket'
+  | 'Airline Travel Credit'
+  | 'United Club Membership'
+  | 'Chip Technology'
+  | 'Earn More Miles for Sharing Travel Stories'
+  | 'Mastercard World Elite Concierge and Luxury Travel Benefits'
+  | '20% Savings on Delta In-Flight Purchases'
+  | '25% Savings on United In-Flight Food and Drink Purchases'
+  | '$100 Hilton Properties Credit'
+  | '$250 Hilton Resort Credit'
+  | 'Hilton Honors Diamond Membership'
+  | 'Free Birthday Gift'
+  | '2x Points During Your Birthday Month'
+  | 'Car Rental VIP Perks'
+  | 'Free shipping with the purchase of a bra'
+  | 'Monthly Dining Credit'
+  | 'Amazon Prime Student';
 
-export type CardType = "visa" | "mastercard" | "american_express" | "discover";
-export type IntroOfferType = "miles" | "points" | "statement_credit";
+export type CardType = 'visa' | 'mastercard' | 'american_express' | 'discover';
+export type IntroOfferType = 'miles' | 'points' | 'statement_credit';
 
 export interface Marketplace {
   uuid: string;
@@ -932,12 +932,12 @@ export interface BaseOffer {
 }
 
 export type CardPurpose =
-  | "balance_transfer"
-  | "cash_back"
-  | "earning_rewards"
-  | "improve_credit"
-  | "low_interest"
-  | "new_to_credit"
-  | "student"
-  | "travel_incentives"
-  | "unknown";
+  | 'balance_transfer'
+  | 'cash_back'
+  | 'earning_rewards'
+  | 'improve_credit'
+  | 'low_interest'
+  | 'new_to_credit'
+  | 'student'
+  | 'travel_incentives'
+  | 'unknown';
